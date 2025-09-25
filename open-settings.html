@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Open Android Settings</title>
+<style>
+  body{font-family:sans-serif;padding:18px;max-width:720px;margin:auto}
+  a.btn{display:block;padding:14px 18px;margin:10px 0;border-radius:8px;text-decoration:none;border:1px solid #222;color:#000}
+  small{color:#555}
+</style>
+</head>
+<body>
+  <h2>Open Android Settings</h2>
+  <p><small>Tap a link below. If nothing happens, try the alternate variants at the bottom.</small></p>
+
+  <!-- 1: Main Settings -->
+  <a class="btn" href="intent://#Intent;action=android.settings.SETTINGS;end">Open System Settings</a>
+
+  <!-- 2: App info for YouTube -->
+  <a class="btn" href="intent://package/com.google.android.youtube#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;end">Open YouTube App Info</a>
+
+  <!-- 3: Allow unknown apps for YouTube (Android 8+) -->
+  <a class="btn" href="intent://package/com.google.android.youtube#Intent;action=android.settings.MANAGE_UNKNOWN_APP_SOURCES;end">Allow installs from YouTube</a>
+
+  <hr>
+  <p><small>If these don’t work, try the alternate variants below (some WebViews prefer a different format).</small></p>
+
+  <a class="btn" href="intent://#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;scheme=package;S.android.package=com.google.android.youtube;end">Alt: App Info (variant)</a>
+
+  <a class="btn" href="intent://package/com.google.android.youtube#Intent;end">Alt: Package-only (variant)</a>
+
+  <p><small>Notes: (1) These links only request the Settings screen — you must interact with the Settings UI. (2) If nothing happens, the IHU WebView may block intent:// URIs.</small></p>
+</body>
+</html>
